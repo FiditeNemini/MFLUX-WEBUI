@@ -4,12 +4,12 @@
 >
 > - ❌ **Gradio UI has been removed**
 > - ✅ **REST API only** - All functionality via HTTP endpoints
-> - ✅ **Flux2 Klein models only** (Flux1 removed)
+> - ✅ **FLUX.2 models**: Klein + base + dev (Flux1 removed)
 > - 📖 **See [API.md](API.md) for complete API documentation**
 
 ![MFLUX WebUI Logo](logo.png)
 
-A REST API server for Flux2 Klein image generation on Apple Silicon using MLX.
+A REST API server for FLUX.2 image generation on Apple Silicon using MLX.
 
 [![Install with Pinokio](https://img.shields.io/badge/Install%20with-Pinokio-blue)](https://pinokio.computer)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -49,7 +49,7 @@ curl -X POST http://localhost:7861/sdapi/v1/txt2img \
 ### API Documentation
 - **Complete API Docs**: [API.md](API.md)
 - **Base URL**: `http://localhost:7861`
-- **Supported Models**: Flux2 Klein 4B/9B (Flux1 removed)
+- **Supported Models**: FLUX.2 Klein (4B/9B), base, and experimental dev (Flux1 removed)
 
 ---
 
@@ -76,9 +76,10 @@ If you were using the UI version:
 - `flux2-klein-base-4b-mlx-4bit` - Pre-quantized 4-bit
 - `flux2-klein-base-4b-mlx-8bit` - Pre-quantized 8-bit
 - `flux2-klein-base-9b` - Base 9B model (guidance > 1.0 supported)
+- `flux2-dev` - Experimental FLUX.2-dev (very large; high-RAM machines only)
 - All models support runtime quantization (3/4/6/8-bit).
 
-**Note**: Distilled FLUX.2 Klein models use **fixed guidance=1.0**. Base models allow guidance > 1.0.
+**Note**: Distilled FLUX.2 Klein models use **fixed guidance=1.0**. Base models (and `flux2-dev`) allow guidance > 1.0.
 
 ---
 
